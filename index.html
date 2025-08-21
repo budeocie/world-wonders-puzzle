@@ -1,141 +1,125 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.77">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8">
+  <title>World Wonders Puzzle by Bude Ocie</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      margin: 20px;
+      color: #333;
+    }
+    #puzzle-container {
+      margin: 20px;
+    }
+    canvas {
+      border: 2px solid #333;
+      background: white;
+    }
+    #controls {
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #4CAF50;
+      color: white;
+    }
+    button:hover {
+      background: #45a049;
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;World Wonders Puzzle by Bude Ocie&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #f7f7f7;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #333;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#puzzle-container {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>canvas {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid #333;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#controls {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #4CAF50;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>button:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #45a049;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;World Wonders Puzzle by Bude Ocie&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="puzzle-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;canvas id="puzzle" width="400" height="400"&gt;&lt;/canvas&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="controls"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="shuffle()"&gt;Shuffle&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="nextLevel()"&gt;Next Level&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const canvas = document.getElementById('puzzle');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const ctx = canvas.getContext('2d');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const rows = 3, cols = 3;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const pieceSize = canvas.width / cols;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>const images = [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"chichén_itzá.png",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"great_wall_of_china.png",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"taj_mahal.png",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"petra.png",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"machu_picchu.png"</p>
-<p class="p1"><span class="Apple-converted-space">    </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>let currentLevel = 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>let pieces = [];</p>
-<p class="p1"><span class="Apple-converted-space">    </span>let img = new Image();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function loadLevel(level) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>img.src = images[level];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>img.onload = () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>initPuzzle();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>shuffle();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>};</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function initPuzzle() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pieces = [];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for (let r = 0; r &lt; rows; r++) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>for (let c = 0; c &lt; cols; c++) {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>pieces.push({</p>
-<p class="p1"><span class="Apple-converted-space">            </span>r, c,</p>
-<p class="p1"><span class="Apple-converted-space">            </span>x: c * pieceSize,</p>
-<p class="p1"><span class="Apple-converted-space">            </span>y: r * pieceSize</p>
-<p class="p1"><span class="Apple-converted-space">          </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>drawPuzzle();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function shuffle() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pieces.sort(() =&gt; Math.random() - 0.5);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>drawPuzzle();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function drawPuzzle() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>ctx.clearRect(0, 0, canvas.width, canvas.height);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pieces.forEach((p, i) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let r = Math.floor(i / cols);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let c = i % cols;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ctx.drawImage(</p>
-<p class="p1"><span class="Apple-converted-space">          </span>img,</p>
-<p class="p1"><span class="Apple-converted-space">          </span>p.c * pieceSize, p.r * pieceSize, pieceSize, pieceSize,</p>
-<p class="p1"><span class="Apple-converted-space">          </span>c * pieceSize, r * pieceSize, pieceSize, pieceSize</p>
-<p class="p1"><span class="Apple-converted-space">        </span>);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function nextLevel() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>currentLevel++;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (currentLevel &gt;= images.length) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>alert("🎉 Selamat! Semua puzzle selesai!");</p>
-<p class="p1"><span class="Apple-converted-space">        </span>currentLevel = 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>loadLevel(currentLevel);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Start game</p>
-<p class="p1"><span class="Apple-converted-space">    </span>loadLevel(currentLevel);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <h1>World Wonders Puzzle by Bude Ocie</h1>
+  <div id="puzzle-container">
+    <canvas id="puzzle" width="400" height="400"></canvas>
+    <div id="controls">
+      <button onclick="shuffle()">Shuffle</button>
+      <button onclick="nextLevel()">Next Level</button>
+    </div>
+  </div>
+  <script>
+    const canvas = document.getElementById('puzzle');
+    const ctx = canvas.getContext('2d');
+    const rows = 3, cols = 3;
+    const pieceSize = canvas.width / cols;
+
+    const images = [
+      "chichén_itzá.png",
+      "great_wall_of_china.png",
+      "taj_mahal.png",
+      "petra.png",
+      "machu_picchu.png"
+    ];
+
+    let currentLevel = 0;
+    let pieces = [];
+    let img = new Image();
+
+    function loadLevel(level) {
+      img.src = images[level];
+      img.onload = () => {
+        initPuzzle();
+        shuffle();
+      };
+    }
+
+    function initPuzzle() {
+      pieces = [];
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          pieces.push({
+            r, c,
+            x: c * pieceSize,
+            y: r * pieceSize
+          });
+        }
+      }
+      drawPuzzle();
+    }
+
+    function shuffle() {
+      pieces.sort(() => Math.random() - 0.5);
+      drawPuzzle();
+    }
+
+    function drawPuzzle() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pieces.forEach((p, i) => {
+        let r = Math.floor(i / cols);
+        let c = i % cols;
+        ctx.drawImage(
+          img,
+          p.c * pieceSize, p.r * pieceSize, pieceSize, pieceSize,
+          c * pieceSize, r * pieceSize, pieceSize, pieceSize
+        );
+      });
+    }
+
+    function nextLevel() {
+      currentLevel++;
+      if (currentLevel >= images.length) {
+        alert("🎉 Selamat! Semua puzzle selesai!");
+        currentLevel = 0;
+      }
+      loadLevel(currentLevel);
+    }
+
+    // Start game
+    loadLevel(currentLevel);
+  </script>
 </body>
 </html>
